@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>FORMULAR</title>
+
+    <style>
+        input[type=text], select {
+            height: 50px;
+            width: 40%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #f2e7dd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            align-content: center;
+        }
+
+        input[type=submit] {
+            height: 50px;
+            width: 10%;
+            background-color: #538ea0;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+
+        }
+
+        input[type=submit]:hover {
+            background-color: #538ea0;
+        }
+
+        div {
+            align-items: center;
+            align-content: center;
+            align-self: center;
+            height: auto;
+            width: 900px;
+            background-size: contain;
+            background-position: center;
+            border-radius: 10px;
+            background-color: #eff2eb;
+            padding: 50px;
+        }
+        form{
+            text-align: left;
+        }
+
+
+
+
+
+
+
+
+        /* The container */
+        .container {
+            position: relative;
+            padding-left: 25px;
+            padding-right: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Hide the browser's default radio button */
+        .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        /* Create a custom radio button */
+        .checkmark {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            height: 15px;
+            width: 15px;
+            background-color: #eee;
+            border-radius: 50%;
+        }
+
+        /* On mouse-over, add a grey background color */
+        .container:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        /* When the radio button is checked, add a blue background */
+        .container input:checked ~ .checkmark {
+            background-color: #538ea0;
+        }
+
+        /* Create the indicator (the dot/circle - hidden when not checked) */
+        .checkmark:after {
+            content: "";
+            margin-left: -5px;
+            margin-top: -5px;
+            position: absolute;
+            display: none;
+        }
+
+        /* Show the indicator (dot/circle) when checked */
+        .container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        /* Style the indicator (dot/circle) */
+        .container .checkmark:after {
+            top: 8px;
+            left: 8px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: white;
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+
+
+
+
+
+
+
+
+<body>
+<script src="verifica.js" ></script>
+
+
+<center>
+<div>
+    <form name="myForm" action="index.html" onsubmit="return verifica()" method="post">
+        <p style="font-size: 35px">Va rugam sa completati cu urmatoarele informatii:</p>
+
+        <label for="nume"><b>Nume:</b></label>
+        <input type="text" id="nume" name="nume" placeholder="Numele dvs...">
+        <br><br>
+        <label for="cnp"><b>CNP:</b></label>
+        <input type="text" id="cnp" name="cnp" placeholder="CNP-ul dvs...">
+        <br><br>
+        <label for="telefon"><b>Telefon:</b></label>
+        <input type="text" id="telefon" name="telefon" placeholder="Nr. dvs. de telefon...">
+        <br><br>
+        <label for="email"><b>E-mail:</b></label>
+        <input type="text" id="email" name="email" placeholder="Adresa dvs. de mail...">
+        <br><br>
+
+        <br>
+        <b>Varsta:</b>
+        <label class="container">Intre 14-26 ani
+            <input type="radio" checked="checked" name="radio">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Intre 27-49 ani
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">50+ ani
+            <input type="radio" name="radio">
+            <span class="checkmark"></span>
+        </label>
+        <br><br>
+
+
+
+        <br><br>
+        <b>Limbajele preferate:</b>
+        <label class="container">C++
+            <input type="checkbox" name="limbaje">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Java
+            <input type="checkbox" name="limbaje">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">C#
+            <input type="checkbox" name="limbaje">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container">Python
+            <input type="checkbox" name="limbaje">
+            <span class="checkmark"></span>
+        </label>
+
+
+
+        <br><br><br><br><br><br><br><br><br>
+        <input id="ok" type="submit" value="OK" onclick="verifica()">
+        <input id="submit" type="submit" value="Submit" style="float: right;" onclick="verifica()">
+
+
+<script src="verifica.js"></script>
+
+
+    </form>
+</div>
+</center>
+
+
+
+
+
+
+</body>
+
+</html>
